@@ -1,0 +1,46 @@
+server:
+  port: 8081
+  context-path: /admin/app/api
+swagger.enable: true
+server.ip:  http://www.bensonchen.cn:8080
+online.fee.limit.minutes: 600
+defaultPassword:  123456t
+web.upload-path:  /home/tomcat-8.5.20/webapps
+multipart:
+    maxFileSize: 20Mb
+    maxRequestSize: 20Mb
+spring:
+  http:
+        multipart:
+                  maxFileSize: 10Mb
+                  maxRequestSize: 10Mb
+# 页面默认前缀目录
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+    static-path-pattern:  /**
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,\
+                        classpath:/static/,classpath:/public/,file:${web.upload-path}
+ #jpa配置
+  jpa:
+      show-sql: true
+      hibernate:
+        ddl-auto: update
+      generate-ddl: true
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/child?characterEncoding=UTF-8
+    username: youyi
+    password: youyi
+    encoding:
+      charset: utf-8
+      force: true
+      enabled: true
+mybatis:
+  mapper-locations: classpath:com.hrt.dao.mapper/*.xml
+image:
+  file-path: /alidata/server/tomcat-7.0.54/webapps
+  ip: http://www.bensonchen.cn:8080
